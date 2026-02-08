@@ -1,0 +1,13 @@
+# Entorno virtual
+venv/
+
+# Cachés de Python
+__pycache__/
+*.pyc
+
+# Variables de entorno
+.env
+
+#Directorio con la documentación de entrega
+doc_entrega/
+enunciado/
