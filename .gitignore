@@ -8,6 +8,8 @@ __pycache__/
 # Variables de entorno
 .env
 
-#Directorio con la documentación de entrega
+#Directorio que no se suben a GitHub
 doc_entrega/
 enunciado/
+api_key/
+Codigo/.env

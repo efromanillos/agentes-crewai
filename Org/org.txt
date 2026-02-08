@@ -1,0 +1,70 @@
+=========================================
+ACTIVIDAD: CrewAI
+Curso: CE IA y Big Data
+Asignatura: Programación IA
+Profesor: Rubén
+Título del programa: Planificador Inteligente de Tareas (PIT)
+Autor: Enrique Fernández Romanillos (G1)
+D.08/02/2026
+=========================================
+
+Descripción.
+-----------
+Se  implementa un programa a través de agentes de IA con la finalidad de planificar la ejecución de actividades
+programadas a lo largo del tiempo. La lista de actividades las pasa el usuario a los agentes indicando
+nombre de la tarea, fecha de inicio, fecha de finalización, horas diarias disponibles y peso (carga de la actividad [1,5]).
+Dos agentes, un analista de tareas y un planificador de tareas.
+
+Analista de tareas: observa la lista de tareas y extrae información útil, prepara el terreno.
+
+     - Interpreta cada tarea:
+        · nombre.
+        · fecha de entrega
+        · peso
+        
+     - Calcula la urgencia relativa (cuántos días faltan)
+     
+     - Detectar tareas críticas (entregas muy próximas)
+     
+     - Detectar tareas pesadas (peso alto)
+     
+     - Clasificar tareas por prioridad combinando:
+     
+        · proximidad de la fecha.
+        · peso.
+        
+     - Identificar posibles cuellos de botella.
+     - Preparar un resumen estructurado para el planificador.
+     
+     ¿Qué produce el analista?
+     
+     Un informe analítico con:
+     
+        - Tareas ordenadas por pioridad
+        - Días restantes para cada entrega
+        - Nivel de urgencia (alta, media, baja)
+        - Nivel de carga (ligera, moderada, pesada)
+        - Observaciones útiles para planificar.
+        
+     El agente analista convierte los datos crudos que el usuario le pasa en forma de lista y los
+     convierte en información útil para el planificador.
+     
+     
+        
+        
+Planificador de tareas: recibe el análisis y construye un plan temporal.
+
+    - Distribuye las tareas alo largo del tiempo.
+    - Tiene en cuenta:
+        · Fechas de entrega.
+        · Pesos.
+        · Urgencias
+        · Carga semanal equilibrada
+    - Decide qué días trabajar cada tarea
+    - Adelanta tareas pesadas si hay semanas libres.
+    - Genera un calendario claro y razonado.
+    
+    Qué produce el agente planificador?
+    
+    Un plan semanal o multi-semanal en forma de guión y salida en plan.md
+        
