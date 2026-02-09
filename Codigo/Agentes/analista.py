@@ -10,7 +10,7 @@ analista = Agent(
     role='Analista académico especializado en gestión del tiempo y priorización de tareas de estudio',
     goal=(
         'Interpretar la lista de tareas académicas del estudiante analizando fechas de entrega, '
-        'pesos, urgencias, disponibilidad diaria y holguras necesarias. Calcular márgenes de '
+        'dificultad, urgencias, disponibilidad diaria y holguras necesarias. Calcular márgenes de '
         'seguridad adecuados para cada tarea, ajustar fechas internas y generar un informe '
         'estructurado que permita al planificador crear un calendario realista, equilibrado y '
         'sin riesgos de retraso.'

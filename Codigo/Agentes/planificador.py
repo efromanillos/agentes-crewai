@@ -12,7 +12,7 @@ planificador = Agent(
     role='Planificador académico experto en gestión del tiempo y organización de estudios',
     goal=(
         'Crear un calendario semanal o multisemanal equilibrado para tareas académicas, '
-        'distribuyendo el trabajo según urgencia, peso, holguras calculadas por el analista '
+        'distribuyendo el trabajo según urgencia, dificultad, holguras calculadas por el analista '
         'y las horas disponibles del estudiante. Garantizar que ninguna entrega se retrase '
         'incluso ante imprevistos y que la carga diaria sea realista, sostenible y adecuada '
         'al ritmo académico.'

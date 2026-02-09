@@ -12,7 +12,7 @@ Descripción.
 -----------
 Se  implementa un programa a través de agentes de IA con la finalidad de planificar la ejecución de actividades
 programadas a lo largo del tiempo. La lista de actividades las pasa el usuario a los agentes indicando
-nombre de la tarea, fecha de inicio, fecha de finalización, horas diarias disponibles y peso (carga de la actividad [1,5]).
+nombre de la tarea, fecha de inicio, fecha de finalización, horas diarias disponibles y dificultad (baja, media, alta).
 Dos agentes, un analista de tareas y un planificador de tareas.
 
 Analista de tareas: observa la lista de tareas y extrae información útil, prepara el terreno.
@@ -42,8 +42,8 @@ Analista de tareas: observa la lista de tareas y extrae información útil, prep
      
         - Tareas ordenadas por pioridad
         - Días restantes para cada entrega
-        - Nivel de urgencia (alta, media, baja)
-        - Nivel de carga (ligera, moderada, pesada)
+        - Nivel de urgencia (baja, media, alta)
+        - Nivel de dificultad  (baja, media, alta)
         - Observaciones útiles para planificar.
         
      El agente analista convierte los datos crudos que el usuario le pasa en forma de lista y los
