@@ -1,21 +1,25 @@
 #=================================================
-#Módulo crew.py: lanzar la crew de gentes y tareas
+# Módulo crew.py: lanzar la crew de agentes y tareas
 #=================================================
 
+import json
+from crewai import Crew, Process
+from Agentes.analista import analista
+from Agentes.planificador import planificador
+from Tareas.analizar_tareas import analizarTareas
+from Tareas.planificar_tareas import planificarTareas
+from config_llm import llm
 
-from crewai import Crew, LLM
-from dotenv import load_dotenv
-import os
+def launch_crew(bloque_tareas):
+    # Convertimos el diccionario en texto legible para el LLM
+    bloque_texto = json.dumps(bloque_tareas, indent=2, ensure_ascii=False)
 
-load_dotenv()
+    crew = Crew(
+        agents=[analista, planificador],
+        tasks=[analizarTareas, planificarTareas],
+        process=Process.sequential,
+        verbose=True
+    )
 
-api_key_groq = os.getenv("API_KEY_GROQ")
-
-#Conectamos al modelo
-llm = LLM(
-    model="llama-3.3-70b-versatile",
-    temperature=0.5,
-    #Dirección donde CrewAi enviará las peticiones al modelo LLM que ofrece Groq
-    base_url="https://api.groq.com/openai/v1",
-    api_key=api_key_groq
-)
+    result = crew.kickoff(inputs={'bloque': bloque_texto})
+    print("\nPlan generado correctamente en la carpeta 'Planes/'.\n")

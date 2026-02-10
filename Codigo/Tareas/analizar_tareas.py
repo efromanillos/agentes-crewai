@@ -7,9 +7,10 @@
 from crewai import Task
 from Agentes.analista import analista
 
-analizar_tareas = Task(
+analizarTareas = Task(
+    name='analizarTareas',
     description=(
-        'Analizar la lista de tareas académicas proporcionadas por el estudiante. '
+        'Analizar la lista de tareas académicas proporcionadas por el estudiante: {bloque}. '
         'Identificar fechas de entrega, pesos, urgencias y disponibilidad diaria. '
         'Calcular holguras adecuadas para cada tarea y ajustar las fechas internas '
         'para evitar riesgos de retraso. Especificar claramente cuánta holgura se '
