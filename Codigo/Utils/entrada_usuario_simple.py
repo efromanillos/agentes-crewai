@@ -100,8 +100,6 @@ def pedir_bloque():
 
 # PARA PRUEBAS
 if __name__ == '__main__':
-
-   if __name__ == '__main__':
     bloques = []
 
     while True:

@@ -1,6 +1,7 @@
 # menu.py
 from Utils.entrada_usuario_simple import pedir_bloque
 from crew import launch_crew  # launch_crew debe aceptar el bloque como argumento
+from entradas_prueba import bloque_prueba
 import os
 
 def menu_simple():
@@ -11,7 +12,8 @@ def menu_simple():
         print('\n--- MENÚ ---')
         print('1. Introducir tareas (crear un bloque)')
         print('2. Generar plan (enviar bloque al analista/planificador)')
-        print('3. Salir')
+        print('3. Generar plan con diccionario bloque_pruebas (DEBUGGING)')
+        print('4. Salir')
 
         opcion = input('Elige una opción (1/2/3): ').strip()
 
@@ -30,7 +32,13 @@ def menu_simple():
                 except Exception as e:
                     print('No se pudo lanzar Crew:', e)
 
-            case '3':
+            case '3': 
+                try:
+                    launch_crew(bloque_prueba)
+                except Exception as e:
+                    print('No se pudo lanzar Crew:', e)
+
+            case '4':
                 print('Saliendo.')
                 break
 
