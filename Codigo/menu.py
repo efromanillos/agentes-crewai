@@ -12,7 +12,7 @@ def menu_principal():
     bloque = None
 
     while True:
-        print('\n--- MENÚ ---')
+        print('\n-------- PLANIFICADOR INTELIGENTE DE TAREAS -----------\n')
         print('1. Introducir tareas (crear un bloque)')
         print('2. Generar plan (enviar bloque al analista/planificador)')
         print('3. Generar plan con diccionario predefinido (DEBUGGING)')

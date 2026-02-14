@@ -31,6 +31,10 @@ planificar_tareas = Task(
         puedes usar herramientas de ejecución de código.
 
         El calendario debe ser claro, estructurado y fácil de seguir.
+
+        IMPORTANTE:
+        - Si utilizas CodeInterpreterTool, no incluyas el parámetro 'libraries_used'.
+        - En caso de necesitarlo, asegúrate de que 'libraries_used' sea siempre una lista, por ejemplo: ["datetime"].
     """,
     expected_output="""
         Un calendario académico en formato Markdown que incluya:

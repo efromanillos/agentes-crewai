@@ -63,6 +63,7 @@ Planificador de tareas: recibe el análisis y construye un plan temporal.
     - Decide qué días trabajar cada tarea
     - Adelanta tareas pesadas si hay semanas libres.
     - Genera un calendario claro y razonado.
+    - Da consejos de realización de cada tarea y proporciona un resúmen final del bloque
     
     Qué produce el agente planificador?
     
