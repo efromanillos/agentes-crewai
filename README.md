@@ -48,17 +48,3 @@ El usuario puede:
 •     Salir del programa.
 
 NOTA: el archivo de salida con los Planes se alamacena en la carpeta Planes tras ejecutar la Crew desde el directorio raíz
-
-#### Estructura de directorios
-
-"""
-/Proyecto
-    /codigo
-        main.py
-        Agentes/
-        Herramientas/
-        Tareas/
-        Utils/
-    /Planes
-    README.md
-"""
