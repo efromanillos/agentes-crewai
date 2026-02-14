@@ -1,32 +1,43 @@
-# entradas_prueba.py
+# entrada_prueba.py
 
 bloque_prueba = {
-    "nombre": "Bloque Prueba",
-    "horas_diarias": 4,
+    "nombre": "Bloque de Prueba",
+    "horas_diarias": 3,
     "tareas": [
         {
-            "descripcion": "Ejercicios álgebra: autovalores y autovectores",
-            "inicio": "12/02/2026",
-            "entrega": "15/02/2026",
-            "dificultad": "alta"
+            "id": "1",
+            "descripcion": "Ejercicios de álgebra lineal: matrices y determinantes",
+            "fecha_inicio": "12/02/2026",
+            "fecha_fin": "14/02/2026",
+            "dificultad": "media"
         },
         {
-            "descripcion": "Estudiar capítulos 3 y 4 del libro Historia de la IA",
-            "inicio": "17/02/2026",
-            "entrega": "20/02/2026",
+            "id": "2",
+            "descripcion": "Lectura del capítulo 2 del libro de IA",
+            "fecha_inicio": "13/02/2026",
+            "fecha_fin": "16/02/2026",
             "dificultad": "baja"
         },
         {
-            "descripcion": "Análisis de datos: Dataset de Kaggle con algoritmo KMeans",
-            "inicio": "19/02/2026",
-            "entrega": "01/03/2026",
+            "id": "3",
+            "descripcion": "Práctica de Python: manejo de ficheros",
+            "fecha_inicio": "15/02/2026",
+            "fecha_fin": "18/02/2026",
             "dificultad": "media"
         },
         {
-            "descripcion": "Ejercicios Python: Estructuras",
-            "inicio": "03/03/2026",
-            "entrega": "12/03/2026",
-            "dificultad": "media"
+            "id": "4",
+            "descripcion": "Mini-proyecto: análisis de datos con pandas",
+            "fecha_inicio": "17/02/2026",
+            "fecha_fin": "25/02/2026",
+            "dificultad": "alta"
+        },
+        {
+            "id": "5",
+            "descripcion": "Resumen teórico: redes neuronales básicas",
+            "fecha_inicio": "20/02/2026",
+            "fecha_fin": "23/02/2026",
+            "dificultad": "baja"
         }
     ]
 }

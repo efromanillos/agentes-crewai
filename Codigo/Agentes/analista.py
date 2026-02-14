@@ -1,5 +1,5 @@
 from crewai import Agent
-from Herramientas.tools import buscador_consejos
+from Herramientas.tools import calculadora
 from config_llm import llm
 
 #Uso de la herramienta para que los agentes puedan realizar cálculos de tiempos,
@@ -22,8 +22,8 @@ analista = Agent(
         'sobrecargas, y siempre consideras holguras para evitar imprevistos. Tu análisis es la '
         'base para una planificación académica sólida y sostenible.'
     ),
-    #tools=[buscador_consejos],
+    tools=[calculadora],
     llm = llm,
-    #max_iterations=1,
+    max_iterations=3,
     verbose=True
 )

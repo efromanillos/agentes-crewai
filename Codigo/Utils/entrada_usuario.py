@@ -3,12 +3,13 @@
 from datetime import datetime
 
 # Contador global para ids incrementales
-_next_task_id = 1
+_siguiente_id = 1
 
+#Función auxiliar para crear ids automáticamente
 def _generar_id():
-    global _next_task_id
-    id_actual = _next_task_id
-    _next_task_id += 1
+    global _siguiente_id
+    id_actual = _siguiente_id
+    _siguiente_id += 1
     return str(id_actual)
 
 def pedir_fecha(mensaje):
@@ -22,7 +23,7 @@ def pedir_fecha(mensaje):
                 print('La fecha no puede ser anterior a hoy.\n')
                 continue
 
-            return fecha_str, fecha
+            return fecha_str
         except ValueError:
             print('Formato incorrecto. Usa DD/MM/AAAA.\n')
 
@@ -56,13 +57,19 @@ def pedir_tareas():
         if descripcion.lower() == 'fin':
             break
 
-        fecha_inicio_str, fecha_inicio = pedir_fecha('Fecha de inicio (DD/MM/AAAA): ')
-        fecha_fin_str, fecha_fin = pedir_fecha('Fecha de entrega (DD/MM/AAAA): ')
+        # Pedimos las fechas como string
+        fecha_inicio_str = pedir_fecha('Fecha de inicio (DD/MM/AAAA): ')
+        fecha_fin_str = pedir_fecha('Fecha de entrega (DD/MM/AAAA): ')
 
-        # Validar que la fecha de fin sea posterior a la de inicio, puede ser el mismo día
+        # Convertimos a datetime SOLO para validar
+        fecha_inicio = datetime.strptime(fecha_inicio_str, '%d/%m/%Y')
+        fecha_fin = datetime.strptime(fecha_fin_str, '%d/%m/%Y')
+
+        # Validar que la fecha de fin sea posterior o igual a la de inicio
         while fecha_fin < fecha_inicio:
-            print('La fecha de entrega debe ser posterior a la fecha de inicio.\n')
-            fecha_fin_str, fecha_fin = pedir_fecha('Fecha de entrega (DD/MM/AAAA): ')
+            print('La fecha de entrega debe ser igual o posterior a la fecha de inicio.\n')
+            fecha_fin_str = pedir_fecha('Fecha de entrega (DD/MM/AAAA): ')
+            fecha_fin = datetime.strptime(fecha_fin_str, '%d/%m/%Y')
 
         dificultad = pedir_dificultad()
 
@@ -88,48 +95,18 @@ def pedir_bloque():
         return None
 
     horas_diarias = pedir_horas_bloque()
-    bloque = {
-        #si usr le ha puesto nombre, el bloque tendrá esa descripción, si no el bloque será: Bloque seguido de fecha y hora
+    bloque_tareas = {
+        #si usr le ha puesto nombre, el bloque tendrá esa descripción, si no, el bloque será: Bloque seguido de fecha y hora
         'nombre': nombre or f'Bloque {datetime.now().strftime("%d/%m/%Y_%H:%M:%S")}',
         'tareas': tareas,
         'horas_diarias': horas_diarias
     }
-    return bloque
+    return bloque_tareas
 
-def listar_bloques(bloques):
-    """
-    Lista bloques con índice, nombre, número de tareas y horas diarias.
-    Permite al usuario ver las tareas de un bloque introduciendo su índice.
-    """
-    if not bloques:
-        print('No hay bloques creados.\n')
-        return
 
-    print('\nBloques disponibles:\n')
-    for i, b in enumerate(bloques):
-        print(f'{i}: {b["nombre"]} - {len(b["tareas"])} tareas - {b["horas_diarias"]} h/día')
-    print()
-
-    entrada = input('Introduce el índice de un bloque para ver sus tareas (o deja vacío para volver): ').strip()
-    if entrada == '':
-        return
-
-    try:
-        idx = int(entrada)
-        bloque = bloques[idx]
-    except (ValueError, IndexError):
-        print('Índice inválido.\n')
-        return
-
-    print(f'\nTareas en - {bloque["nombre"]} -:\n')
-    for t in bloque['tareas']:
-        print(f'id={t.get("id","-")} | {t["descripcion"]} [{t["fecha_inicio"]} -> {t["fecha_fin"]}] - {t["dificultad"]}')
-    print()
 
 # PARA PRUEBAS
 if __name__ == '__main__':
-
-   if __name__ == '__main__':
     bloques = []
 
     while True:
@@ -141,7 +118,4 @@ if __name__ == '__main__':
         if salir == 'salir':
             break
 
-    # Mostrar todos los bloques añadidos
-    listar_bloques(bloques)
-
-    #print(bloque_tareas)
+    print(bloque_tareas)
