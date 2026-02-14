@@ -1,11 +1,62 @@
 # Actividad 05 – CrewAI
 
-Este repositorio contiene el desarrollo de la Actividad 05 de la asignatura **Programación de IA**, centrada en la creación y experimentación con una *Crew* de agentes de IA utilizando la librería **CrewAI**.
+Proyecto de la asignatura **Programación de IA** 
+Planificador Inteligente de Tareas. 
+Versión: v1.0‑beta
 
-## El proyecto incluye
-- Diseño e implementación de una crew de agentes con una temática propia.
-- Uso de al menos una tool de CrewAI distinta a la vista en clase.
-- Documentación del funcionamiento, pruebas y resultados.
-- (Opcional) Implementación de un flujo de trabajo jerárquico entre agentes.
+Este repositorio contiene el desarrollo de una *Crew* de agentes inteligentes utilizando la librería **CrewAI**, orientada a la planificación académica personalizada. El sistema permite analizar un bloque de tareas, generar un informe detallado y construir un calendario de estudio equilibrado y realista.
 
-El código se organiza en la carpeta `/codigo/`.
+---
+
+## Cómo ejecutar el programa
+
+Es importante ejecutar el programa **desde la raíz del proyecto**, no desde dentro de la carpeta `codigo/`.
+
+#### Ejecución correcta (recomendada)
+
+Desde la raíz del repositorio:
+
+python codigo/main.py
+
+Funcionalidades principales
+---------------------------
+
+#### Análisis automático de tareas
+
+El agente analista:
+
+•     Calcula holguras entre fechas.
+•     Evalúa urgencia, dificultad y peso de cada tarea.
+•     Detecta riesgos y propone recomendaciones.
+•     Genera un informe estructurado que sirve como entrada para el planificador.
+
+#### Planificación académica inteligente
+
+El agente planificador:
+
+•     Distribuye las tareas en un calendario semanal o multisemanal.
+•     Ajusta horas por día según disponibilidad del estudiante.
+•     Respeta fechas límite y holguras.
+•     Añade recomendaciones prácticas y consejos obtenidos mediante búsqueda web.
+•     Genera un archivo final en formato Markdown dentro de la carpeta .
+
+#### Menú interactivo
+
+El usuario puede:
+•     Introducir tareas.
+•     Ejecutar la Crew.
+•     Salir del programa.
+
+NOTA: el archivo de salida con los Planes se alamacena en la carpeta Planes tras ejecutar la Crew desde el directorio raíz
+
+#### Estructura de directorios
+
+/Proyecto
+    /codigo
+        main.py
+        Agentes/
+        Herramientas/
+        Tareas/
+        Utils/
+    /Planes
+    README.md
