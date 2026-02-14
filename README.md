@@ -51,6 +51,7 @@ NOTA: el archivo de salida con los Planes se alamacena en la carpeta Planes tras
 
 #### Estructura de directorios
 
+"""
 /Proyecto
     /codigo
         main.py
@@ -60,3 +61,4 @@ NOTA: el archivo de salida con los Planes se alamacena en la carpeta Planes tras
         Utils/
     /Planes
     README.md
+"""
